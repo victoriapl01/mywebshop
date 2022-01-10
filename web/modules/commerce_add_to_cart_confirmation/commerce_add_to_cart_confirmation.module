@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Commerce add to cart confirmation module.
+ */
+
+use Drupal\commerce_product\Entity\ProductVariationInterface;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_theme().
+ */
+function commerce_add_to_cart_confirmation_theme() {
+  return [
+    'commerce_add_to_cart_confirmation' => [
+      'template' => 'commerce_add_to_cart_confirmation',
+      'path' => drupal_get_path('module', 'commerce_add_to_cart_confirmation') . '/templates',
+      'variables' => [
+        'message' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function commerce_add_to_cart_confirmation_page_attachments(array &$attachments) {
+  if (\Drupal::messenger()->messagesByType('commerce-add-to-cart-confirmation')) {
+    $attachments['#attached']['library'][] = 'commerce_add_to_cart_confirmation/commerce_add_to_cart_confirmation';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function commerce_add_to_cart_confirmation_preprocess_views_view(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  if ($view->storage->id() === 'confirm_message_product_display') {
+    $variables['title'] = [
+      '#type' => 'markup',
+      '#markup' => '<div class="added-product-title">' . $view->getTitle() . '</div>',
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for field templates.
+ */
+function commerce_add_to_cart_confirmation_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  /** @var $entity \Drupal\Core\Entity\EntityInterface */
+  $entity = $element['#object'];
+  if (!$entity instanceof ProductVariationInterface) {
+    return;
+  }
+
+  if ($element['#view_mode'] !== 'add_to_cart_confirmation') {
+    return;
+  }
+
+  $variables['attributes']['class'][] = 'add-to-cart-confirmation';
+  $variables['attributes']['class'][] = Html::cleanCssIdentifier($element['#field_name']);
+}

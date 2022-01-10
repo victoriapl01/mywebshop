@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Contains hooks for Commerce Authorize.net.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function commerce_authnet_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!empty($form['#step_id']) && $form['#step_id'] == 'review') {
+    $build_info = $form_state->getBuildInfo();
+    /** @var Drupal\commerce_checkout\Plugin\Commerce\CheckoutFlow\MultistepDefault $checkout_flow */
+    $checkout_flow = $build_info['callback_object'];
+    $order = $checkout_flow->getOrder();
+    if (!$order->payment_gateway->isEmpty()) {
+      $payment_gateway_plugin_id = $order->payment_gateway->entity->getPluginId();
+      if ($payment_gateway_plugin_id === 'authorizenet_visa_checkout') {
+        $form['actions']['next']['#value'] = t('Proceed to next step to finish with Visa Checkout');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function commerce_authnet_cron() {
+  $verifier = \Drupal::getContainer()->get('commerce_authnet.echeck_transaction_verifier');
+  $payments = $verifier->getPayments();
+  foreach ($payments as $payment) {
+    $verifier->processPayment($payment);
+  }
+}

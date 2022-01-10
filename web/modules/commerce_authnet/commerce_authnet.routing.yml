@@ -1,0 +1,7 @@
+commerce_authnet.cca_validation:
+  path: '/admin/commerce-authnet/cca-validation.json'
+  defaults:
+    _controller: '\Drupal\commerce_authnet\Controller\CcaValidation::validateJwt'
+    _title: 'CCA Validation'
+  requirements:
+    _access: 'TRUE'

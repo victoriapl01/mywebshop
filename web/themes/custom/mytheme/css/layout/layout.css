@@ -1,0 +1,106 @@
+/*Import Custom Styles */
+
+/**************************** Site Structure *****************************/
+
+.layout-container {
+	font-size: 1em;
+	max-width:960px;
+	border-radius: 5px;
+	margin: auto;
+	position: relative;
+	clear: both
+}
+.region-header {
+  max-width: 960px;
+  margin: 0px;
+  height: 150px;
+}
+.site-logo {
+  float: left;
+  padding-top: 35px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  clear:both;
+  }
+
+.site-logo img {
+  float: left;
+  width: 144px;
+  height: 90px;
+  }
+.path-services .region-content {
+  float: left;
+  width: 100%;
+  position: relative;
+} 
+.path-blog .region-content {
+  float: left;
+  width: 74%;
+  position: relative;
+} 
+.path-blog .field-content img{
+  height: 150px;
+}
+/* ------------------ Sidebar ----------------- */
+
+.region-sidebar-second {
+  float: right; 
+  width: 22%;
+  position: relative;
+  padding: 10px 15px 0; 
+}
+.region-sidebar-first {
+  float: left; 
+  width: 25%;
+  margin-right:30px;
+  position: relative;
+  padding: 10px 15px 0;
+}
+
+.sidebar .block {
+  border-style: solid;
+  border-width: 1px;
+  padding: 15px 20px;
+  margin: 0 0 20px;
+}
+
+.sidebar .block .content {
+  font-size: 0.914em;
+  line-height: 1.4;
+}
+
+.front .region-front .block{
+  float:left; 
+  margin-right:30px;
+
+}
+.front .region-front .block.last {
+margin-right:0px;
+}
+.front .region-front .block .block-title{
+background: #FCFCFC;
+padding-right: 10px;
+display: inline-block;
+}
+
+.front .region-front .block p{
+  margin:0;
+  padding:10px 0;
+  }
+
+.front .block{
+  float:left; 
+  margin-right:30px;
+  width: 30%;
+}
+.front .block .block-title{
+  background: #FCFCFC;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.front .block p{
+  margin:0;
+  padding:10px 0;
+}
+

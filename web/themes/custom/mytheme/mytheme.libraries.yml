@@ -1,0 +1,20 @@
+mytheme-css:
+  version: 1.0
+  css:
+    base:
+      css/base/styles.css: {}
+    layout:
+      css/layout/layout.css: {}
+    component:
+      css/components/button.css: {}
+      css/components/menu.css: {}
+      css/components/views.css: {}
+ubuntu:
+  license:
+    name: Ubuntu font licence
+    url: https://ubuntu.com/legal/font-licence
+  css:
+    theme:
+      //fonts.googleapis.com/css2?family=Ubuntu: { type: external }
+      css/base/styles.css: {}
+

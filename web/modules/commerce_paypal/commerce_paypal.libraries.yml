@@ -1,0 +1,24 @@
+paypal_checkout:
+  css:
+    theme:
+      css/paypal-checkout.css: {}
+  js:
+    js/paypal-checkout.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+paypal_checkout_custom_card_fields:
+  css:
+    theme:
+      css/paypal-checkout-custom-card-fields.css: {}
+      css/paypal-checkout.css: {}
+  js:
+    js/paypal-checkout-custom-card-fields.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

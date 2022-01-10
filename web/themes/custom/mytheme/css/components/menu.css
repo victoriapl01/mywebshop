@@ -1,0 +1,168 @@
+
+/*
+Main Menu
+*/
+
+.banner{
+  padding: 0px;
+}
+
+.block ul{
+  width: 65%;
+}
+.block ul li{
+  padding: 0px;
+ 
+}
+.menu {
+		float: right;
+		border-bottom: 2px solid #000;
+    margin: 0px;
+}
+
+.menu:before,
+.menu:after {
+  content: "";
+  display: table;
+}
+
+.menu:after {
+  clear: both;
+}
+
+ul.menu a.is-active{
+  color: #50a2bb;
+}
+
+.menu li {
+  float: left;
+  position: relative;
+}
+.menu li.active_menu_item > a {
+  color:#50a2bb; 
+  }
+.menu a {
+  float: left;
+  padding: 40px 20px 30px;
+  color: #000;
+  text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.menu li:hover > a, .menu li.active_menu_item:hover > a{
+  color: #FFF;
+	background: #2b8eac;
+}
+
+*html .menu li a:hover { /* IE6 only */
+  color: #000;
+}
+
+.menu ul {
+  margin: 20px 0 0 0;
+  _margin: 0; /*IE6 only*/
+  opacity: 0;
+  visibility: hidden;
+ 
+  top: 70px;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.menu li:hover > ol {
+  opacity: 1;
+  visibility: visible;
+  margin: 0px;
+}
+
+.menu ul ul {
+  top: 0;
+  left: 150px;
+  margin: 0 0 0 20px;
+  _margin: 0; /*IE6 only*/
+  -moz-box-shadow: -1px 0 0 rgba(255,255,255,.3);
+  -webkit-box-shadow: -1px 0 0 rgba(255,255,255,.3);
+  box-shadow: -1px 0 0 rgba(255,255,255,.3);
+}
+
+.menu ul li {
+  float: none;
+  display: block;
+  border: 0;
+  _line-height: 0; /*IE6 only*/
+  -moz-box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+  -webkit-box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+  box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+}
+
+.menu ul li:last-child {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.menu ul a {
+  padding: 10px;
+  width: 130px;
+  _height: 10px; /*IE6 only*/
+  display: block;
+	background: #FFF;
+	border: 0;
+  white-space: nowrap;
+  float: none;
+  text-transform: none;
+}
+
+.menu ul a:hover {
+  background-color: #90A860;
+}
+
+.menu ul li:first-child > a {
+  -moz-border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.menu ul li:first-child > a:after {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: -6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+}
+
+.menu ul ul li:first-child a:after {
+  left: -6px;
+  top: 50%;
+  margin-top: -6px;
+  border-left: 0;
+  border-bottom: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-right: 6px solid #90A860;
+}
+
+.menu ul li:first-child a:hover:after {
+  border-bottom-color: #90A860;
+}
+
+.menu ul ul li:first-child a:hover:after {
+  border-right-color: #90A860;
+  border-bottom-color: transparent;
+}
+
+.menu ul li:last-child > a {
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}

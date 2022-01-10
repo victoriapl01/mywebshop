@@ -1,0 +1,23 @@
+name: Garage
+type: theme
+description: The theme for auto repair shop
+base theme: classy
+core_version_requirement: ^8 || ^9
+screenshot: taller.png
+
+libraries:
+  - mytheme/mytheme-css
+  - mytheme/ubuntu
+  - core/normalize
+
+regions:
+  header: Header
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  sidebar_first: Left Sidebar
+  sidebar_second: Right Sidebar
+  front: Front Page Blocks
+  footer: Footer
+  page_bottom: Page Bottom
+  page_top: Page Top

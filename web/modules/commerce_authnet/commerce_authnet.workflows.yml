@@ -1,0 +1,80 @@
+payment_acceptjs:
+  id: payment_acceptjs
+  group: commerce_payment
+  label: 'Authorize.net (Accept.js)'
+  states:
+    new:
+      label: 'New'
+    unauthorized_review:
+      label: 'Unauthorized (Needs Review)'
+    unauthorized_declined:
+      label: 'Unauthorized (Declined)'
+    authorization:
+      label: 'Authorization'
+    authorization_review:
+      label: 'Authorization (Needs Review)'
+    authorization_declined:
+      label: 'Authorization (Declined)'
+    authorization_expired:
+      label: 'Authorization (Expired)'
+    authorization_voided:
+      label: 'Authorization (Voided)'
+    completed:
+      label: 'Completed'
+    partially_refunded:
+      label: 'Partially refunded'
+    refunded:
+      label: 'Refunded'
+  transitions:
+    authorize:
+      label: 'Authorize payment'
+      from: [new]
+      to: authorization
+    unauthorized_review:
+      label: 'Needs review (Unauthorized)'
+      from: [new]
+      to: unauthorized_review
+    authorization_review:
+      label: 'Needs review (Authorized)'
+      from: [new]
+      to: authorization_review
+    approve_unauthorized:
+      label: 'Approve payment'
+      from: [unauthorized_review]
+      to: authorization
+    decline_unauthorized:
+      label: 'Decline payment'
+      from: [new]
+      to: unauthorized_declined
+    approve_authorization:
+      label: 'Approve payment'
+      from: [authorization_review]
+      to: completed
+    decline_authorization:
+      label: 'Decline payment'
+      from: [authorization_review]
+      to: authorization_declined
+    void:
+      label: 'Void payment'
+      from: [authorization, authorization_review, unauthorized_review]
+      to: authorization_voided
+    expire:
+      label: 'Expire payment'
+      from: [authorization]
+      to: authorization_expired
+    authorize_capture:
+      label: 'Authorize and capture payment'
+      from: [new]
+      to: completed
+    capture:
+      label: 'Capture payment'
+      from: [authorization]
+      to: completed
+    partially_refund:
+      label: 'Partially refund payment'
+      from: [completed]
+      to: partially_refunded
+    refund:
+      label: 'Refund payment'
+      from: [completed, partially_refunded]
+      to: refunded

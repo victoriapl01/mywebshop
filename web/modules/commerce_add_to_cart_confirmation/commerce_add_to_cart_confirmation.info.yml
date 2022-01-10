@@ -1,0 +1,14 @@
+name: Commerce add to cart confirmation
+description: Provides an "add to cart" confirmation screen.
+type: module
+package: Commerce (contrib)
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - commerce:commerce_cart
+  - commerce:commerce_product
+  - drupal:views
+
+# Information added by Drupal.org packaging script on 2020-09-20
+version: '1.0.0-alpha1'
+project: 'commerce_add_to_cart_confirmation'
+datestamp: 1600628558

@@ -1,0 +1,9 @@
+name: RSVP List
+description: Allows users to RSVP for Events and provides a contact list for administrators
+#name of the block on the extends page
+package: RSVP List
+type: module
+version: 1.0
+core_version_requirement: ^8 || ^9
+#configurationpage
+configure: rsvplist.admin_settings

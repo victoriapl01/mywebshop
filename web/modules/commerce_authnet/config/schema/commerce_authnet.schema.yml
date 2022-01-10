@@ -1,0 +1,53 @@
+commerce_payment.commerce_payment_gateway.plugin.authorizenet_acceptjs:
+  type: commerce_payment_gateway_configuration
+  mapping:
+    api_login:
+      type: string
+      label: 'Login ID'
+    transaction_key:
+      type: string
+      label: 'Transaction key'
+    client_key:
+      type: string
+      label: 'Client key'
+    cca_status:
+      type: boolean
+      label: 'Cardinal Cruise Authentication: Status'
+    cca_api_id:
+      type: string
+      label: 'Cardinal Cruise Authentication: API ID'
+    cca_org_unit_id:
+      type: string
+      label: 'TrCardinal Cruise Authentication: Org Unit ID'
+    cca_api_key:
+      type: string
+      label: 'Cardinal Cruise Authentication: API Key'
+
+commerce_payment.commerce_payment_gateway.plugin.authorizenet_echeck:
+  type: commerce_payment_gateway_configuration
+  mapping:
+    api_login:
+      type: string
+      label: 'Login ID'
+    transaction_key:
+      type: string
+      label: 'Transaction key'
+    client_key:
+      type: string
+      label: 'Client key'
+
+commerce_payment.commerce_payment_gateway.plugin.authorizenet_visa_checkout:
+  type: commerce_payment_gateway_configuration
+  mapping:
+    api_login:
+      type: string
+      label: 'Login ID'
+    transaction_key:
+      type: string
+      label: 'Transaction key'
+    client_key:
+      type: string
+      label: 'Client key'
+    visa_checkout_api_key:
+      type: string
+      label: 'VISA Checkout API key'

@@ -1,0 +1,8 @@
+{
+  "require": {
+    "sainsburys/guzzle-oauth2-plugin": {
+      "version": "v3.0.5",
+      "url": "https://github.com/Sainsburys/guzzle-oauth2-plugin/archive/v3.0.5.zip"
+    }
+  }
+}

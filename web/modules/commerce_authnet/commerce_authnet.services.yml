@@ -1,0 +1,9 @@
+services:
+  commerce_authnet.logger:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['commerce_authnet']
+
+  commerce_authnet.echeck_transaction_verifier:
+    class: Drupal\commerce_authnet\EcheckTransactionVerifier
+    arguments: ['@entity_type.manager', '@commerce_authnet.logger', '@datetime.time']

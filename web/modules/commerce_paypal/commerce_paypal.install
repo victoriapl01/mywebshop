@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Commerce PayPal.
+ */
+
+/**
+ * Install the PayPal Checkout payment method type.
+ */
+function commerce_paypal_update_8101() {
+  $entity_type = \Drupal::entityTypeManager()->getDefinition('commerce_payment_method');
+  \Drupal::service('entity.bundle_plugin_installer')->installBundles($entity_type, ['commerce_paypal']);
+}
+
+/**
+ * Install the PayPal Checkout payment method type.
+ */
+function commerce_paypal_update_8102() {
+  $entity_type = \Drupal::entityTypeManager()->getDefinition('commerce_payment_method');
+  \Drupal::service('entity.bundle_plugin_installer')->installBundles($entity_type, ['commerce_paypal']);
+}
+
+/**
+ * Move the credit messaging settings to a different config object.
+ */
+function commerce_paypal_update_8103() {
+  $config_factory = \Drupal::configFactory();
+  $legacy_config = $config_factory->getEditable('commerce_paypal.settings');
+  $client_id = $legacy_config->get('commerce_paypal.credit_messaging_client_id');
+  if ($client_id) {
+    $config = $config_factory->getEditable('commerce_paypal.credit_messaging_settings');
+    $config
+      ->set('client_id', $client_id)
+      ->set('add_to_cart', $legacy_config->get('commerce_paypal.credit_messaging_add_to_cart'))
+      ->save();
+    $legacy_config->delete();
+  }
+}

@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Commerce Authorize.net.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function commerce_authnet_requirements($phase) {
+  $requirements = [];
+  if ($phase == 'install') {
+    if (!class_exists('\CommerceGuys\AuthNet\Configuration')) {
+      $requirements['commerce_authnet_library'] = [
+        'description' => t('Commerce Authorize.net requires the commerceguys/authnet library.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}

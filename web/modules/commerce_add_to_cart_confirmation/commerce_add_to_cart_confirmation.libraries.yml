@@ -1,0 +1,15 @@
+commerce_add_to_cart_confirmation:
+  version: VERSION
+  js:
+    js/commerce_add_to_cart_confirmation.js: {}
+  css:
+    theme:
+      css/commerce_add_to_cart_confirmation.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.form
+    - core/drupal
+    - core/drupal.form
+    - core/drupal.ajax
+    - core/drupalSettings
+    - core/drupal.dialog

@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+  enforced:
+    module:
+      - commerce_add_to_cart_confirmation
+id: commerce_product_variation.add_to_cart_confirmation
+label: 'Add to cart confirmation'
+targetEntityType: commerce_product_variation
+cache: true

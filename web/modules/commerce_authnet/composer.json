@@ -1,0 +1,12 @@
+{
+    "name": "drupal/commerce_authnet",
+    "type": "drupal-module",
+    "description": "Provides Commerce integration for Authorize.net.",
+    "homepage": "http://drupal.org/project/commerce_authnet",
+    "license": "GPL-2.0+",
+    "require": {
+        "drupal/commerce": "^2.25",
+        "commerceguys/authnet": "^1.1.2",
+        "lcobucci/jwt": "~3.1"
+    }
+}

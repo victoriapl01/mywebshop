@@ -1,0 +1,77 @@
+accept-js-sandbox:
+  version: 1
+  js:
+    "https://jstest.authorize.net/v1/Accept.js": { type: external, attributes: { charset: utf-8 } }
+
+accept-js-production:
+  version: 1
+  js:
+    "https://js.authorize.net/v1/Accept.js": { type: external, attributes: { charset: utf-8 } }
+
+form-authnet:
+  version: VERSION
+  js:
+    js/commerce_authnet.form.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+
+form-accept:
+  version: VERSION
+  js:
+    js/commerce_authnet.accept.form.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - commerce_authnet/form-authnet
+
+form-echeck:
+  version: VERSION
+  js:
+    js/commerce_authnet.echeck.form.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - commerce_authnet/form-authnet
+
+form-visa-checkout:
+  version: VERSION
+  css:
+    component:
+      css/commerce_authnet.visa.form.css: {}
+  js:
+    js/commerce_authnet.visa.form.js: {}
+  dependencies:
+  - core/jquery
+  - core/drupal
+  - core/jquery.once
+  - commerce_authnet/form-authnet
+
+form-visa-checkout-sandbox:
+  version: 1
+  js:
+    "https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js": { type: external, attributes: { charset: utf-8 } }
+
+form-visa-checkout-production:
+  version: 1
+  js:
+    "https://assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js": { type: external, attributes: { charset: utf-8 } }
+
+cardinalcruise-dev:
+  version: 1
+  header: true
+  js:
+    "https://songbirdstag.cardinalcommerce.com/edge/v1/songbird.js": { type: external, attributes: { charset: utf-8 } }
+  dependencies:
+  - commerce_authnet/form-accept
+
+cardinalcruise:
+  version: 1
+  header: true
+  js:
+    "https://songbird.cardinalcommerce.com/edge/v1/songbird.js": { type: external, attributes: { charset: utf-8 } }
+  dependencies:
+  - commerce_authnet/form-accept

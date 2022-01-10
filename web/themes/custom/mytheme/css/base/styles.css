@@ -1,0 +1,53 @@
+/*
+Theme Specific Core HTML Elements Styling
+*/
+
+html {
+	font-size: 100%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: .875em;
+  line-height: 1.6em;
+  border-top: 7px solid #21566e;
+  background: #bdd9e9 url(../../images/fondo.png);
+  color: rgb(26, 21, 90);
+}
+a{
+color: #256179;
+text-decoration: none;
+}
+
+h1, h2, h3, h4 {font-family: 'Ubuntu', sans-serif;}
+
+h1 {
+font-size: 34px;
+color: #000;
+font-weight: inherit;
+margin:0;
+padding:20px 0;
+line-height:1em;
+}
+
+h2, h3{
+font-size:2em;
+margin: 20px 0;
+color: #000; 
+font-weight: inherit;
+line-height:1em;
+}
+
+
+h4 {
+  font-size: 1.2em; 
+  font-weight: 700
+}
+
+img{
+  max-width:100%;
+}
+blockquote {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    margin: 10px 0;  
+}

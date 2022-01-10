@@ -1,0 +1,35 @@
+/* button small */
+
+.button-small {
+  float: right;
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #CCCCCC #CCCCCC #AAAAAA;
+  border-radius: 3px 3px 3px 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 1px #FFFFFF inset;
+  font-weight: bold;
+	text-decoration: none;
+  padding: 1px 5px;
+	font-size: 11px;
+	display: inline-block;
+  text-shadow: 0 0 0 transparent, 0 1px 0 #FFFFFF;
+  background-image: -moz-linear-gradient(top, #fafafa, #E0E0E0);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fafafa), to(#E0E0E0));
+  background-image: -webkit-linear-gradient(top, #fafafa, #E0E0E0); 
+  background-image: -ms-linear-gradient(top, #fafafa, #E0E0E0);
+  background-image: -o-linear-gradient(top, #fafafa, #E0E0E0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#E0E0E0')
+}
+.field-content a{  
+    color: #2c5592;
+}
+
+.button_small:hover {  
+  -webkit-box-shadow: 0 0 6px #cccccc;
+  -moz-box-shadow: 0 0 6px #cccccc;
+   box-shadow: 0 0 6px #cccccc; }

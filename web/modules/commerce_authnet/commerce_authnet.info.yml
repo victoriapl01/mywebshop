@@ -1,0 +1,12 @@
+name: Commerce Authorize.net
+type: module
+description: 'Provides Commerce integration for Authorize.net.'
+package: Commerce (contrib)
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - commerce:commerce_payment
+
+# Information added by Drupal.org packaging script on 2021-12-23
+version: '8.x-1.6'
+project: 'commerce_authnet'
+datestamp: 1640285925

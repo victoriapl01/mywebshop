@@ -1,0 +1,13 @@
+<div class="commerce-add-to-cart-confirmation">
+  <div class="added-product-title clearfix">{{ 'Item successfully added to your cart'|t }}</div>
+  {{ message }}
+  <div class="button-wrapper">
+    <div class="button checkout">
+      <a href="{{ path('commerce_cart.page') }}">{{ 'Go to cart'|t }}</a>
+    </div>
+    <div class="button continue">
+      <a href="#" class="commerce-add-to-cart-confirmation-close"><span>{{ 'Continue shopping'|t }}</span></a>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
